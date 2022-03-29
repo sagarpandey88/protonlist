@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtonList.Web", "ProtonList.Web\ProtonList.Web.csproj", "{2EE62184-9801-4DD9-8B96-BCB921320945}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtonList.DAL", "ProtonList.DAL\ProtonList.DAL.csproj", "{73FB8280-9D3D-4B85-962C-79AC3FCFCF34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtonList.BO", "ProtonList.BO\ProtonList.BO.csproj", "{0CA6A80F-C557-4540-AEB6-2041E3722BDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtonList.BLL", "ProtonList.BLL\ProtonList.BLL.csproj", "{61607FDE-96DC-41BE-B830-2A2021C4D823}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtonList.Common", "ProtonList.Common\ProtonList.Common.csproj", "{2BD79991-5A11-4715-90E2-3002537D9A16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EE62184-9801-4DD9-8B96-BCB921320945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EE62184-9801-4DD9-8B96-BCB921320945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EE62184-9801-4DD9-8B96-BCB921320945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EE62184-9801-4DD9-8B96-BCB921320945}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73FB8280-9D3D-4B85-962C-79AC3FCFCF34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73FB8280-9D3D-4B85-962C-79AC3FCFCF34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73FB8280-9D3D-4B85-962C-79AC3FCFCF34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73FB8280-9D3D-4B85-962C-79AC3FCFCF34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CA6A80F-C557-4540-AEB6-2041E3722BDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA6A80F-C557-4540-AEB6-2041E3722BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA6A80F-C557-4540-AEB6-2041E3722BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA6A80F-C557-4540-AEB6-2041E3722BDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61607FDE-96DC-41BE-B830-2A2021C4D823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61607FDE-96DC-41BE-B830-2A2021C4D823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61607FDE-96DC-41BE-B830-2A2021C4D823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61607FDE-96DC-41BE-B830-2A2021C4D823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BD79991-5A11-4715-90E2-3002537D9A16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BD79991-5A11-4715-90E2-3002537D9A16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BD79991-5A11-4715-90E2-3002537D9A16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BD79991-5A11-4715-90E2-3002537D9A16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {630B5FF0-CD2D-4EE9-8645-56AE92A088F5}
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45
+	EndGlobalSection
+EndGlobal

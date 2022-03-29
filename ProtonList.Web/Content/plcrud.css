@@ -1,0 +1,347 @@
+﻿body {
+}
+
+
+
+/*new proton start*/
+
+
+/*Controls*/
+
+.pl-mainlist {
+}
+
+.pl-ItemTitle {
+    padding: 10px;
+    margin: 10px;
+}
+
+.pl-ItemDescription {
+    min-height: 75px;
+    /*min-width: 500px;*/
+    margin: 10px;
+    padding: 10px;
+    resize: none;
+    width: 100%;
+    font-size: 12px;
+    border: none;
+}
+
+.pl-LinkValue {
+    margin: 10px;
+    padding: 10px;
+    display: none;
+}
+
+.pl-checkbox {
+    border: 1px solid gray;
+    cursor: grab;
+}
+
+.pl-AddLinkWrapper {
+    float: right;
+}
+
+.pl-ImageContainer {
+    width: 100%;
+    height: auto;
+    background-color: lightgray;
+    margin-top: 10%;
+}
+
+    .pl-ImageContainer:hover {
+        opacity: 0.6;
+    }
+
+
+.pl-ThumbImage {
+    /*width: 127px;
+    height: 127px;*/
+    width: 100%;
+    height: auto;
+}
+
+.pl-ImageInputWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    user-select: none;
+    transform: translate(-50%,-50%);
+}
+
+#dvImageUrlWrapper {
+    display: none;
+}
+
+.bootstrap-tagsinput {
+    width: 100%;
+}
+
+
+.pl-ItemTitleInput {
+    width: 90% !important;
+    border: 0px;
+}
+
+
+/*Utitlies*/
+.pl-boxShadow {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08);
+}
+
+
+.pl-borderRadius {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+/*new proton end*/
+
+.bootstrap-tagsinput .tag {
+    background: #01BF86;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid lightgray;
+}
+
+
+.pl-overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+
+.pl-sortplaceholder {
+    background-color: #01BF86;
+    height: 40px;
+    width: 100%;
+    border: 1px solid gray;
+    text-align: center;
+    color: white;
+    vertical-align: middle;
+}
+
+    .pl-sortplaceholder:before {
+        content: counter(listItemIndex) ' Drop me here...';
+    }
+
+.pl-handlecell {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+    .pl-handlecell span {
+        visibility: hidden;
+    }
+
+    .pl-handlecell img {
+        width: 16px;
+        height: 16px;
+    }
+
+.pl-ListItemRow {
+    border: 1px solid rgba(0,0,0,.125);
+    counter-increment: listItemIndex;
+    /*padding-bottom:2px;*/
+    background-color: white;
+}
+
+    .pl-ListItemRow:hover .pl-handlecell > span {
+        visibility: visible;
+    }
+
+
+
+a {
+    color: darkorange;
+}
+
+
+.pl-ItemImageThumb {
+    width: 150px;
+}
+
+.pl-Item {
+    border-bottom: 1px solid #d3d3d3;
+    padding: 10px;
+}
+
+
+.pl-FeaturedImage {
+    width: 100%;
+    height: 200px;
+    border: 1px solid lightgray;
+}
+
+.pl-viewlist {
+    list-style: decimal;
+}
+
+
+/*Akshata Code*/
+
+.pl-ItemTitle, .pl-ItemDescription, .pl-LinkValue, .pl-ItemLink {
+    border: 1px solid #d3d3d3 !important;
+    font-size: 13px;
+    padding: 10px;
+    margin: 2px 0px;
+    width: 100%
+}
+
+.pl-ImageInputWrapper {
+    font-size: 20px !important;
+    padding: 25px;
+    background: white;
+    color: black !important;
+}
+
+.pl-ImageContainer {
+    background-color: transparent !important;
+    margin-top: 0px;
+    padding-left: 10px;
+    width: auto;
+    display: inline;
+}
+
+.pl-ItemDescription {
+    min-height: 150px !important;
+    width: 100% !important;
+}
+
+.pl-ItemTitleInput {
+    width: 100% !important;
+}
+
+.pl-AddLinkWrapper {
+    float: none;
+}
+
+.pl-handlecell img {
+    height: 25px;
+    width: auto;
+}
+
+select {
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #d3d3d3;
+    color: #495057;
+}
+
+.bootstrap-tagsinput {
+    display: inline;
+}
+
+.row {
+    padding-top: 10px;
+    padding-left: 0px;
+    margin-left: 0px;
+    margin-right: 10px;
+}
+
+.pl-ListItemRow {
+    background-color: #F0FFF0;
+    border-radius: 5px;
+}
+
+
+.pl-viewlist {
+    width: 98%;
+    list-style: none;
+}
+
+.pl-viewItemDescription {
+    word-wrap: break-word;
+    font-size: 12px;
+    white-space: pre-line;
+}
+
+@media only screen and (min-width : 1224px) {
+    .pl-viewcontainer {
+        width: 80%;
+    }
+}
+
+
+input.error {
+    border: 1px dotted red !important;
+}
+
+label.error {
+    color: red;
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+
+.pl-ImagePreview {
+    height: 98%;
+}
+
+
+
+.pl-viewtags {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    .pl-viewtags li {
+        display: inline-block;
+        margin: 0 .3em .3em 0;
+        padding: 0;
+    }
+
+        .pl-viewtags li a {
+            display: inline-block;
+            max-width: 250px;
+            height: 28px;
+            line-height: 28px;
+            padding: 0 1em;
+            background-color: #fff;
+            border: 1px solid #aaa;
+            border-radius: 3px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            color: #333;
+            font-size: 13px;
+            text-decoration: none;
+            -webkit-transition: .2s;
+            transition: .2s;
+        }
+
+            .pl-viewtags li a:hover {
+                background-color: #01BF86;
+                border: 1px solid #01BF86;
+                color: #fff;
+            }
+
+.pl-removeImage {
+    color: red;
+    position: absolute;
+    top: -5px;
+    right: 9px
+}
+
+.fa-whatsapp {
+    color: #4caf50;
+    font-size: 25px;
+}
+
+.fa-copy {
+    color: gray;
+    font-size: 25px;
+    padding-left: 10px;
+}

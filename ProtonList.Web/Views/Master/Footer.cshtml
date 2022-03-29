@@ -1,0 +1,70 @@
+﻿<!-- footer
+        =======================================-->
+<section class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="well-lg footer-box">
+                    <strong>About</strong>
+                    <p data-selector="p">  @Html.ActionLink("About Us", "About", "Home")  </p>
+                    <p data-selector="p"> @Html.ActionLink("FAQ", "FAQ", "Home") </p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="well-lg footer-box contact-box">
+                    <strong>Contact Us</strong>
+                    <p data-selector="p">Email: <a href="mailto:support@protonlist.com">support@protonlist.com</a></p>
+                    <p data-selector="p">Facebook page : protonlist</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="well-lg footer-box service-box">
+                    <strong>Why Us?</strong>
+                    <ul class="list-unstyled">
+                        <li>  @Html.ActionLink("Content Writers", "FAQ", "Home") </li>
+                        <li>  @Html.ActionLink("Visitors", "FAQ", "Home") </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="well-lg footer-box">
+                    <strong>Policy</strong>
+                    <ul class="list-unstyled schedule">
+                        <li><span> @Html.ActionLink("Terms of Use", "TermsOfUse", "Home") </span><span></span></li>
+                        <li><span>@Html.ActionLink("Privacy Policy", "PrivacyPolicy", "Home") </span><span></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="mySidenav" class="pl-sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    @if (User.Identity.IsAuthenticated)
+    {
+
+        <a></a>
+        <a style="font-size:14px;color:white">Hi @User.Identity.Name </a>
+        <a href="~/Proton/Create">Create list</a>
+        <a href="~/Proton/GetMyLists">My Lists</a>
+        <a href="~/Manage/EditProfile">Profile</a>
+        <a href="#" onclick="$('#signoutfrm').submit(); return false;">Log Out</a>
+    }
+    else
+    {
+        <a class="nav-button" href="@Url.Action("Login","Account")" data-selector="nav a, a.edit">Login</a>
+    }
+
+</div>
+
+<footer class="footer f-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <p data-selector="p">Copyright @DateTime.Now.Year  <a href="http://protonlist.com" target="_blank">Proton List</a>. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="modal"><!-- Place at bottom of page --> Please wait</div>

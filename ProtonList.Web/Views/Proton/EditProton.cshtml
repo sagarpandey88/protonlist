@@ -1,0 +1,210 @@
+﻿@model ProtonList.Web.Models.ProtonModel
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+@{
+    ViewBag.Title = "EditProton";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+<link href="~/Content/bootstrap-tagsinput.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap-tagsinput.js" type="text/javascript"></script>
+<script src="~/Scripts/plScript.js" type="text/javascript"></script>
+
+<link href="~/Content/plcrud.css" rel="stylesheet" />
+
+
+@using (Html.BeginForm("Submit", "Proton", FormMethod.Post, new { id = "plProtonForm" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-md-12" style="text-align :center;"><h4 style="color:#01BF86">Edit List</h4><hr /></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12"><h6 style="color:#01BF86">List Header : </h6></div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div>
+                <!--Category Dropdown-->
+                @Html.DropDownList("selCategory", Model.CategoryMaster)
+
+
+
+                <!--<span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: 99.3333px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-selCategory-container"><span class="select2-selection__rendered" id="select2-selCategory-container" role="textbox" aria-readonly="true" title="Electronics">Electronics</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>-->
+            </div>
+        </div>
+        <div class="col-md-6">
+            Tags:
+            <!--Tags Control-->
+            <input type="text" value="@Model.ListInfo.Tags" id="txtTags" data-role="tagsinput" />
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-12">
+            <input type="text" id="txtListTitle" required class="pl-input form-control" placeholder="Enter List Title" style="font-size:14px;" value="@Model.ListInfo.ListTitle">
+            <input type="text" id="txtId" style="display:none;font-size:14px;" value="@Model.ListInfo.Id">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <input type="text" id="txtFeaturedImageUrl" required class="pl-input form-control" placeholder="Enter Image Url" value="@Model.OtherListInfo.FeaturedImageUrl" style="font-size:14px;">
+            <hr />
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12"><h6 style="color:#01BF86">List Items : </h6></div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-12">
+            <ul class="list-unstyled pl-mainlist ui-sortable">
+                @foreach (var item in Model.ListItemDetails)
+                {
+
+                    <li class="pl-ListItemRow">
+                        <div class="table">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input id="txtItemTitle" required type="text" class="pl-ItemTitleInput pl-ItemTitle " placeholder="Enter Item Title" value="@item.ItemTitle">
+
+
+                                </div>
+                                <div class="col-md-6">
+                                    <input id="txtItemLink" type="text" class="pl-ItemLink pl-ItemLink " placeholder="Enter Item Link" value="@item.LinkUrl">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <textarea id="dvItemDescription" placeholder="Item Description" class="pl-ItemDescription  pl-borderRadius"> @item.ItemDescription </textarea>
+                                </div>
+                                <div class="col-md-3">
+                                    <div style="display: table; height: 96%; border: 1px solid #d3d3d3;width:100%;text-align:center">
+                                        <div style="display: table-cell; vertical-align: middle;">
+                                            <div id="dvImagePreview" class="pl-ImagePreview">
+                                                <img src="@item.ItemImageUrl" class='pl-ThumbImage' />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12" style="text-align:right">
+                                    <div id="dvImageContainer" class="pl-ImageContainer">
+                                        <img src="~/Images/addImage.png" alt="Click here to add image" title="Click here to add image" />
+                                    </div>
+                                    <div class="pl-handlecell" style="display:inline;padding-left:10px;">
+                                        <img src="~/Images/move-arrows.svg" class="handle ui-sortable-handle" title="Click here to drag item">
+                                        <span class="glyphicon glyphicon-move handle ui-sortable-handle"></span>
+                                    </div>
+                                    <div class="pl-deleteitem" style="display:inline">
+                                        <img src="~/Images/delete.png" alt="Click here to delete item" title="Click here to delete item" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+            <div id="dvAddLink" class="pl-row">
+                <div class="pl-cell">
+                    <a href="javascript:PL.AddNewRow();"><img src="~/Images/add.png" /></a>
+                </div>
+            </div>
+            <div style="text-align:right">
+                <input type="button" onclick="UpdateList()" value="Update" style="    background: #01BF86;    color: white;    padding: 7px 15px;    border-style: solid;    border: 0px;">
+            </div>
+            <div>
+                <div id="dvImageUrlWrapper">
+                    <div id="dvImageUrl" class="pl-ImageInputWrapper">
+                        Image Url :  <input id="txtImageUrl"> <input type="button" value="Submit" id="btnSubmit">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+}
+
+
+<script>
+
+
+    var validator;
+
+    $(document).ready(function () {
+
+        jQuery.validator.setDefaults({
+            debug: true,
+            success: "valid"
+
+        });
+
+        validator = $(".pl-contentcontainer form").validate();
+
+    });
+
+    function UpdateList() {
+
+        if (PL.ValidateForm()) {
+
+            PL.ShowModal();
+            var antiForgeryToken = $("input[name=__RequestVerificationToken]").val();
+
+            var info = PL.GetListInfo();
+            var url = "../EditList";
+
+
+            jQuery.postJSON(url, info, SuccessHandler, ErrorHandler, antiForgeryToken, "text");
+        }
+        else
+        {
+
+            PL.Notify("There are few errors please check.", PL.NotificationType.Warning);
+            return false;
+        }
+
+    }
+
+    function SuccessHandler(data) {
+        console.log(data);
+        console.log("Success");
+        PL.HideModal();
+        $.notify({
+            // options
+            message: 'Update Successful'
+        }, {
+                // settings
+                type: 'success',
+                animate: {
+                    enter: 'animated bounceInDown',
+                    exit: 'animated bounceOutUp'
+                }
+            });
+        window.location.href = data;
+
+    }
+
+
+    function ErrorHandler(args, e) {
+        PL.HideModal();
+        console.log("Error");
+        alert("Error");
+        console.log(args.responseText);
+        console.log(e);
+
+    }
+
+
+</script>
+
+

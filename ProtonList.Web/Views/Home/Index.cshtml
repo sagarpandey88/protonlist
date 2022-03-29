@@ -1,0 +1,48 @@
+﻿
+@model ProtonList.Web.Models.HomePageModel
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_HomeMaster.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/plHome.css" />
+
+<div class="jumbotron jumbotron-fluid pl-homebanner">
+    <div class="container">
+        <h1>Think Create Share...</h1>
+        <p>Proton list is a community driven listing site for various categories... </p>
+    </div>
+</div>
+
+<!--======== sections =========-->
+<section id="pl-homepagesections" class="pl-homepagesections">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 col-md-offset-0">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h3 class="sec-title pl-homepagesectitle" data-selector="h3">Featured</h3>
+                    </div>
+                    @Html.Partial(ProtonList.Web.Common.WebConstants.ViewUrl.ProtonListView, Model.Featured)
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h3 class="sec-title pl-homepagesectitle" data-selector="h3">Most Viewed</h3>
+                    </div>
+                    @*@Html.Partial("Featured", Model.MostViewed)*@
+                    @Html.Partial(ProtonList.Web.Common.WebConstants.ViewUrl.ProtonListView, Model.MostViewed)
+                </div>
+            </div>
+            <div class="col-md-2 col-md-offset-0 d-none">
+                <div class="row">
+                    <h3 class="sec-title col-md-12 pl-homepagesectitle" data-selector="h3">Top Contributors</h3>
+                    @Html.Partial("TopContributors", Model.TopContributors)
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

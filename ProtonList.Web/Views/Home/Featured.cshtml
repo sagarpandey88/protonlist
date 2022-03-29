@@ -1,0 +1,27 @@
+﻿@model List<ProtonList.BO.ListInfo>
+
+
+@foreach (var item in Model.Take(4))
+
+{
+
+    <div class="col-md-3 col-sm-6 col-xs-8">
+        <a href="@item.ListUrl">
+            <div class="blog-post wow fadeInUp" data-wow-delay="0.2s">
+                <div class="post-img">
+                    <img class="img-responsive" src="@item.ImageUrl" alt="image" data-selector="img">
+                    <ul class="list-inline post-info">
+                        <li> <img style="height:16px;width:16px;" src="Images/Like_16_16.png" /><i class="lnr lnr-eye"></i> @item.Likes</li>
+                        <li> <img style="height:16px;width:16px;" src="Images/View16_16.png" /> <i class="lnr lnr-bubble"></i> @item.Views</li>
+
+                    </ul>
+                </div>
+                <div class="blog-details">
+                    <h5 class="media-heading" data-selector="h4"> <a href="@item.ListUrl"> @item.ListTitle</a></h5>
+                    <span class="badge badge-info text-uppercase pl-categorybadge">@item.Category </span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+}

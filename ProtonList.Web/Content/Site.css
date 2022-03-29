@@ -1,0 +1,632 @@
+﻿@charset "UTF-8";
+
+/*=====================================================================
+/  Theme Name: Eden Builder
+/  Author: Script Eden
+/  Author URI: http://www.scripteden.com
+/  Description: Eden Builder
+/  Version: 1.0
+
+
+**********  Table of Main css  *************
+
+1.	headers
+2.	slideshows
+3.	content sections
+4.  blogs
+5.  dividers
+6.  portfolios
+7.  teams
+8.  pricings
+9.  contacts
+10. footers
+    color code : #01BF86
+======================================================================*/
+
+
+/*	header 3
+/*----------------------------------------------------*/
+.header3 .navbar {
+    border: 0;
+    background-color: #191C33;
+    border-radius: 0;
+    margin-bottom: 0;
+    height: 70px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    z-index: 2;
+}
+
+.header3 .navbar-default .navbar-brand {
+    color: #fff;
+    font-size: 26px;
+    line-height: 0;
+    font-weight: 700;
+    padding: 13px;
+}
+
+    .header3 .navbar-default .navbar-brand i {
+        margin-right: 10px;
+    }
+
+.header3 .navbar-nav {
+    background-color: #191C33;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+    .header3 .navbar-nav > li > a {
+        background-color: transparent;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 400;
+        display: inline-block;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 18px;
+        margin-right: 18px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        font-family: 'Roboto Slab', serif;
+    }
+
+.header3 .navbar-default .navbar-toggle {
+    background-color: #191C33;
+    border-color: #fff;
+    border-width: 2px;
+    border-radius: 3px;
+}
+
+.header3 .navbar-default .navbar-collapse.in {
+    margin-top: 8px;
+}
+
+.header3 .navbar-default .navbar-collapse,
+.header3 .navbar-default .navbar-form {
+    border-color: #4e4e4e;
+    box-shadow: none;
+    transition: all 0.5s ease;
+}
+
+.header3 .navbar-default .navbar-toggle:hover,
+.header3 .navbar-default .navbar-toggle:focus {
+    background-color: transparent;
+}
+
+.header3 .navbar-default .navbar-nav > .active > a,
+.header3 .navbar-default .navbar-nav > .active > a:hover,
+.header3 .navbar-default .navbar-nav > .active > a:focus {
+    background-color: transparent;
+    font-weight: 700;
+    color: #01BF86;
+}
+
+.header3 .navbar-default .navbar-nav > li > a:hover {
+    background-color: transparent;
+    color: #01BF86;
+}
+
+.header3 .navbar-default .navbar-nav > li > a:focus {
+    background-color: transparent;
+    color: #fff;
+}
+
+.header3 .navbar-default .navbar-brand:hover,
+.header3 .navbar-default .navbar-brand:focus {
+    color: #fff;
+}
+
+.header3 .navbar-nav > li > a.nav-button:focus,
+.header3 .navbar-nav > li > a.nav-button:hover {
+    border: 0;
+    color: #fff;
+    background-color: #01BF86;
+}
+
+.header3 .navbar-nav > li > a.nav-button {
+    background-color: #01BF86;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 8px 18px;
+    font-weight: bold;
+    border-radius: 3px;
+    line-height: 15px;
+    border-top: 0;
+}
+/* end navbar */
+
+/* header */
+.header3 {
+    /*cover;*/
+    font-family: 'Titillium Web', sans-serif;
+}
+
+    .header3 .intro {
+        min-height: 100vh;
+    }
+
+    .header3 h1 {
+        color: #fff;
+        font-size: 55px;
+        font-weight: 700;
+        letter-spacing: -1px;
+        line-height: 1.2;
+        margin-bottom: 30px;
+        max-width: 700px;
+        position: relative;
+        text-transform: capitalize;
+        font-family: 'Roboto Slab', serif;
+    }
+
+    .header3 .pull-stop::after {
+        border: 6px solid #01bf86;
+        bottom: 15px;
+        width: 8px;
+    }
+
+    .header3 p {
+        color: #f8f8f8;
+        font-size: 15px;
+        line-height: 1.6;
+        font-weight: 300;
+        margin-bottom: 25px;
+        max-width: 700px;
+    }
+
+    .header3 .button {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 16px;
+        padding: 11px 0;
+        min-width: 150px;
+        border: 0;
+        box-shadow: none;
+        border-radius: 4px;
+        margin: 0 2px;
+        /*background-color:*/
+    }
+
+    .header3 .btn-success.button {
+        background-color: #01BF86;
+    }
+
+    .header3 .btn-info.button {
+        background-color: #38A5E0;
+    }
+
+    .header3 .button:hover {
+        background-color: #38A5E0;
+    }
+
+
+
+/*	blog 1
+/*----------------------------------------------------*/
+.blog1 {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+    .blog1 .sec-title {
+        font-weight: 900;
+        margin-bottom: 20px;
+    }
+
+    .blog1 .sec-sub-title {
+        font-size: 15px;
+        margin-bottom: 50px;
+        line-height: 26px;
+    }
+
+    .blog1 h4 {
+        color: #555;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        margin-top: -5px;
+        font-family: 'Titillium Web', sans-serif;
+    }
+
+    .blog1 .blog-details p {
+        color: #666;
+        font-size: 13px;
+        line-height: 24px;
+    }
+
+    .blog1 .blog-post {
+        background: #ffffff;
+        margin-bottom: 25px;
+        border: 1px solid #d9d9d9;
+    }
+
+    .blog1 .post-img {
+        position: relative;
+    }
+
+        .blog1 .post-img img {
+            width: 100%;
+            height: 150px;
+        }
+
+        .blog1 .post-img .date {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #01BF86;
+            display: block;
+            font-size: 17px;
+            font-weight: 700;
+            height: 60px;
+            left: 10px;
+            line-height: 1.2;
+            padding-top: 8px;
+            position: absolute;
+            text-transform: uppercase;
+            top: 10px;
+            width: 60px;
+            font-family: 'Roboto Slab', serif;
+        }
+
+    .blog1 ul.post-info {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        bottom: 0;
+        margin: 0;
+        line-height: 2;
+        height: 35px;
+        padding: 5px 10px;
+        font-family: 'Roboto Slab', serif;
+    }
+
+        .blog1 ul.post-info li i {
+            font-size: 12px;
+            margin-right: 5px;
+        }
+
+    .blog1 span.post-tag {
+        background-color: #01BF86;
+        /*float: right;*/
+        margin-top: 3px;
+        margin-right: -10px;
+        display: block;
+        line-height: 1.5;
+        font-weight: 400;
+        padding: 1px 10px;
+        font-size: 12px
+    }
+
+    .blog1 ul.post-info li {
+        color: #ffffff;
+        font: 10px;
+        font-weight: 600;
+        float: left;
+    }
+
+    .blog1 .post-info > li::after {
+        color: #ffffff;
+        content: " | ";
+        padding-left: 7px;
+        letter-spacing: 1.5px;
+    }
+
+    .blog1 .post-info > li:last-child:after {
+        display: none;
+    }
+
+    .blog1 .blog-post .blog-details .list-inline {
+        margin: 0;
+        margin-top: 20px;
+        display: block;
+    }
+
+        .blog1 .blog-post .blog-details .list-inline > li {
+            font-size: 12px;
+            color: #aaaaaa;
+            font-family: 'Roboto Slab', serif;
+            padding-left: 0;
+            padding-right: 10px;
+            letter-spacing: 1px;
+        }
+
+            .blog1 .blog-post .blog-details .list-inline > li:last-child {
+                padding-left: 10px;
+                padding-right: 0;
+            }
+
+    .blog1 .blog-post .blog-details {
+        padding: 10px 10px;
+    }
+
+
+
+
+/*	footer 2
+/*----------------------------------------------------*/
+.footer2 {
+    background-color: #191919;
+    padding: 50px 0;
+}
+
+    .footer2 .footer-box {
+        box-shadow: none;
+        border-radius: 0;
+        background-color: transparent;
+        border-color: #fcfcfc;
+        min-height: 185px;
+    }
+
+        .footer2 .footer-box .schedule.list-unstyled li {
+            color: #999;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .footer2 .footer-box strong i {
+            float: left;
+            color: #fff;
+            font-size: 30px;
+            line-height: 20px;
+            margin-right: 10px;
+        }
+
+        .footer2 .footer-box strong {
+            color: #fff;
+            display: block;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-family: 'Roboto Slab', serif;
+        }
+
+        .footer2 .footer-box p {
+            font-size: 13px;
+            margin-bottom: 0;
+            color: #999;
+        }
+
+    .footer2 .contact-box p {
+        margin-bottom: 5px;
+    }
+
+    .footer2 .service-box li {
+        color: #999;
+        font-size: 13px;
+        position: relative;
+        padding-left: 25px;
+    }
+
+        .footer2 .service-box li:before {
+            content: '';
+            background-color: #999;
+            position: absolute;
+            display: block;
+            width: 10px;
+            height: 1px;
+            top: 10px;
+            left: 0;
+        }
+
+
+
+    /* footer2 */
+    .footer2.f-bottom {
+        padding: 0;
+        background-color: #101010;
+    }
+
+        .footer2.f-bottom p {
+            color: #aaa;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            margin-bottom: 22px;
+            margin-top: 22px;
+            text-align: center;
+            text-transform: uppercase;
+            word-spacing: 1px;
+            font-family: 'Titillium Web', sans-serif;
+        }
+
+            .footer2.f-bottom p a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+
+
+.pl-categorybadge {
+    background-color: #01BF86;
+}
+
+.media-heading {
+    line-height: 1;
+}
+
+    .media-heading a {
+        font-size: 13px;
+        line-height: 0;
+        font-family: calibri;
+        font-weight: normal;
+        color: #6c6a6a;
+    }
+
+.pl-homebanner h1, .pl-homebanner p {
+    color: #093946 !important;
+    font-family: cursive;
+}
+/*/////////////////////// End ///////////////////////////////*/
+
+
+
+
+/*new proton start*/
+
+
+/*Controls*/
+
+.pl-mainlist {
+}
+
+.pl-ItemTitle {
+    padding: 10px;
+    margin: 10px;
+}
+
+.pl-ItemDescription {
+    min-height: 75px;
+    /*min-width: 500px;*/
+    margin: 10px;
+    padding: 10px;
+    resize: none;
+    width: 100%;
+    font-size: 12px;
+    border: none;
+}
+
+.pl-LinkValue {
+    margin: 10px;
+    padding: 10px;
+    display: none;
+}
+
+.pl-checkbox {
+    border: 1px solid gray;
+    cursor: grab;
+}
+
+.pl-AddLinkWrapper {
+    float: right;
+}
+
+.pl-ImageContainer {
+    width: 100%;
+    height: auto;
+    background-color: lightgray;
+    margin-top: 10%;
+}
+
+    .pl-ImageContainer:hover {
+        opacity: 0.6;
+    }
+
+
+.pl-ThumbImage {
+    /*width: 127px;
+    height: 127px;*/
+    width: 100%;
+    height: auto;
+}
+
+.pl-ImageInputWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    user-select: none;
+    transform: translate(-50%,-50%);
+}
+
+#dvImageUrlWrapper {
+    display: none;
+}
+
+.bootstrap-tagsinput {
+    width: 100%;
+}
+
+
+.pl-ItemTitleInput {
+    width: 90% !important;
+    border: 0px;
+}
+
+
+/*Utitlies*/
+.pl-boxShadow {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08);
+}
+
+
+.pl-borderRadius {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+/*new proton end*/
+
+.bootstrap-tagsinput .tag {
+    background: #01BF86;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid lightgray;
+}
+
+
+.pl-overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+
+.pl-sortplaceholder {
+    background-color: #01BF86;
+    height: 40px;
+    width: 100%;
+    border: 1px solid gray;
+    text-align: center;
+    color: white;
+    vertical-align: middle;
+}
+
+    .pl-sortplaceholder:before {
+        content: counter(listItemIndex) ' Drop me here...';
+    }
+
+.pl-handlecell {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+    .pl-handlecell span {
+        visibility: hidden;
+    }
+
+    .pl-handlecell img {
+        width: 16px;
+        height: 16px;
+    }
+
+.pl-ListItemRow {
+    border: 1px solid rgba(0,0,0,.125);
+    counter-increment: listItemIndex;
+    /*padding-bottom:2px;*/
+    background-color: white;
+}
+
+    .pl-ListItemRow:hover .pl-handlecell > span {
+        visibility: visible;
+    }
+
+
+
+a {
+    color: darkorange;
+}
+
+
+.pl-ItemImageThumb {
+    width: 150px;
+}
+
+.pl-Item {
+    border-bottom: 1px solid #d3d3d3;
+    padding: 10px;
+}

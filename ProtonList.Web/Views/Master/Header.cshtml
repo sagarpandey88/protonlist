@@ -1,0 +1,151 @@
+﻿@using ProtonList.Web.Common;
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#01BF86">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#01BF86">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#01BF86">
+
+<div class="progress" style="height:1px;">
+    <div class="progress-bar progress-bar-striped progress-bar-animated " id="pl-progress" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 10%;height:1px"></div>
+</div>
+<div class="alert alert-success m-0 " style="font-size:12px;" role="alert">
+    We are in beta phase.You may experience some bugs. Please bear with us.
+</div>
+<script>
+
+    var pageStatus = "inprogress";
+    window.document.addEventListener("readystatechange", function () {
+        if (document.readyState == "complete") {
+            pageStatus = "complete";
+        }
+    }, false);
+
+    var prgWidth = 0;
+    var intervalPrg = setInterval(function () {
+
+        prgWidth = prgWidth + 5;
+        UpdateProgressBar(prgWidth);
+        if (pageStatus == "complete") {
+            UpdateProgressBar(100);
+            clearInterval(intervalPrg);
+        }
+
+    }, 500);
+
+    function UpdateProgressBar(percentage) {
+        document.getElementById("pl-progress").style.width = percentage + "%";
+
+    }
+</script>
+<header class="header" id="header">
+    <nav role="navigation" class="navbar navbar-default">
+        <div class="container">
+            @*<div class="row">*@
+            <div class="col-md-3 col-sm-6 col-12 p-0 text-md-left text-center">
+                <img src="~/Images/protonLogo2.png" class="img-responsive pl-headersitelogo" onclick="openNav()" />   <a href="~/" class="col-md-6 p-0">
+                    <span class="col-md-6 pl-siteheading p-md-2">Proton List</span>
+                </a>
+            </div>
+            <div class="col-md-6 col-sm-6 col-12">
+
+                @using (Html.BeginForm("SearchProton", "Proton", FormMethod.Post))
+                {
+                    @*<input class="form-control pl-searchbox typeahead" type="text" name="keyword" placeholder="Search..." value="@ViewBag.SearchKeyword" />*@
+
+                    <div class="typeahead__container">
+                        <div class="typeahead__field">
+                            <div class="typeahead__query">
+                                <input class="js-typeahead"
+                                       name="keyword"
+                                       type="search"
+                                       placeholder="Search..."
+                                       autocomplete="off" value="@ViewBag.SearchKeyword">
+                            </div>
+                            <div class="typeahead__button">
+                                <button type="submit">
+                                    <span class="typeahead__search-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                @*<div id=" " class="col-md-4 ">
+                        <ul class="headerrightbox">
+
+                            <li><a class="nav-button" href="~/Proton/Create" data-selector="nav a, a.edit">+Add New</a></li>
+
+                            <li>  <a href="" class="nav-button" onclick="$('#signoutfrm').submit(); return false;">LOGOUT</a></li>
+                        </ul>
+                    </div>*@
+
+                <div class="hoverDropdown col-md-2 d-none d-md-block">
+                    <a class="hoverDropdownbtn">Hi @(new ProtonContext().CurrentUser.FirstName) </a>
+                    <div class="hoverDropdown-content">
+                        <a href="~/Proton/Create">Create new list</a>
+                        <a href="~/Proton/GetMyLists">My Lists</a>
+                        <a href="~/Manage/EditProfile">Profile</a>
+                        <a href="#" onclick="$('#signoutfrm').submit(); return false;">Log Out</a>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div id=" " class="col-md-2 d-none d-md-block ">
+                    <ul class="headerrightbox">
+                        <li><a class="nav-button" href="@Url.Action("Login","Account")" data-selector="nav a, a.edit">Login</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+
+            }
+            @*</div>*@
+        </div>
+    </nav>
+    <form method="post" action="@Url.Action("LogOff", "Account")" id="signoutfrm" style="display:none;">
+        @Html.AntiForgeryToken()
+    </form>
+
+    @{ Html.RenderPartial("~/Views/Master/HeaderNavigation.cshtml");}
+</header>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131781123-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-131781123-1');
+</script>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5642702253139868",
+        enable_page_level_ads: true
+    });
+</script>
+
+<script src="~/Scripts/jquery.typeahead.min.js" type="text/javascript"></script>
+<link href="~/Content/jquery.typeahead.min.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap-notify.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<script type="text/javascript">
+
+
+    var apiUrl = "@Url.Action("Typeahead", "Proton")";
+    var localData = ["Travel", "Beauty", "Tech"];
+    TypeAheadSearch(".js-typeahead", apiUrl, localData);
+
+     window.applicationBaseUrl = @Html.Raw(HttpUtility.JavaScriptStringEncode(Url.Content("~/"), true));
+
+</script>
+
+
+
+

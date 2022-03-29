@@ -1,0 +1,44 @@
+﻿@model List<ProtonList.BO.UserInfo>
+
+
+@foreach (var item in Model)
+
+{
+
+    <div class="col-md-12 col-sm-4 col-xs-4">
+        <div class="" style="margin:0;text-align:center" data-wow-delay="0.2s">
+            <div class="post-img">
+                <img class="img-responsive rounded-circle" style="height:80px;width:80px;border: 1px solid #d3d3d3" src="@item.ProfilePictureUrl" alt="image" data-selector="img">
+
+                @*<ul class="list-inline post-info">
+                        <li><i class="lnr lnr-eye"></i> @item.Likes </li>
+                        <li><i class="lnr lnr-bubble"></i> @item.Views</li>
+                    </ul>*@
+            </div>
+            <div class="blog-details">
+                <span class="" style="font-size:13px" data-selector="h4">@item.Title </span>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+
+@*<div class="col-md-12 col-sm-4 col-xs-4">
+        <div class="blog-post wow fadeInUp" data-wow-delay="0.2s">
+            <div class="post-img">
+                <img class="img-responsive rounded-circle" style="height:62px" src="@item.ProfilePictureUrl" alt="image" data-selector="img">
+
+                <ul class="list-inline post-info">
+                    <li><i class="lnr lnr-eye"></i> @item.Likes </li>
+                    <li><i class="lnr lnr-bubble"></i> @item.Views</li>
+                </ul>
+            </div>
+            <div class="blog-details">
+                <h5 class="media-heading" data-selector="h4">@item.Title </h5>
+
+
+            </div>
+        </div>
+    </div>*@

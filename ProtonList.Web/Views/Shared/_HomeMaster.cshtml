@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Proton List: Online Community Lists</title>
+    <meta name="description" content="Proton List is an online community driven lists site. Here you can create your own list and share it with the world. You will often find best lists only on Proton lists ">
+  
+
+
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <link rel="stylesheet" href="~/Content/plMaster.css" />
+    <script type="text/javascript" src="~/Scripts/plMaster.js"></script>
+
+
+</head>
+<body>
+
+    @{ Html.RenderPartial("~/Views/Master/Header.cshtml");}
+    <!-- header -->
+
+    <section>
+
+        @RenderBody()
+    </section>
+
+
+    @{ Html.RenderPartial("~/Views/Master/Footer.cshtml");}
+
+
+</body>
+</html>

@@ -1,0 +1,476 @@
+﻿body {
+    font-family: Verdana;
+}
+
+
+
+
+/*------------------Header----------------------------------*/
+
+.header {
+    /*position:fixed;
+    width:100%;
+    z-index:200;*/
+}
+
+    .header .navbar {
+        border: 0;
+        background-color: #191C33;
+        border-radius: 0;
+        margin-bottom: 0;
+        height: 55px;
+        padding-top: 9px;
+        padding-bottom: 9px;
+        z-index: 2;
+    }
+
+    .header .navbar-default .navbar-brand {
+        color: #fff;
+        font-size: 26px;
+        line-height: 0;
+        font-weight: 700;
+        padding: 13px;
+    }
+
+        .header .navbar-default .navbar-brand i {
+            margin-right: 10px;
+        }
+
+    .header .headerrightbox {
+        background-color: #191C33;
+        margin-bottom: 0;
+        margin-top: 0;
+        display: flex;
+    }
+
+        .header .headerrightbox > li > a {
+            background-color: transparent;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 400;
+            display: inline-block;
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: 18px;
+            margin-right: 18px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+    .header .navbar-default .navbar-toggle {
+        background-color: #191C33;
+        border-color: #fff;
+        border-width: 2px;
+        border-radius: 3px;
+    }
+
+    .header .navbar-default .navbar-collapse.in {
+        margin-top: 8px;
+    }
+
+    .header .navbar-default .navbar-collapse,
+    .header .navbar-default .navbar-form {
+        border-color: #4e4e4e;
+        box-shadow: none;
+        transition: all 0.5s ease;
+    }
+
+    .header .navbar-default .navbar-toggle:hover,
+    .header .navbar-default .navbar-toggle:focus {
+        background-color: transparent;
+    }
+
+    .header .navbar-default .headerrightbox > .active > a,
+    .header .navbar-default .headerrightbox > .active > a:hover,
+    .header .navbar-default .headerrightbox > .active > a:focus {
+        background-color: transparent;
+        font-weight: 700;
+        color: #01BF86;
+    }
+
+    .header .navbar-default .headerrightbox > li > a:hover {
+        background-color: transparent;
+        color: #01BF86;
+    }
+
+    .header .navbar-default .headerrightbox > li > a:focus {
+        background-color: transparent;
+        color: #fff;
+    }
+
+    .header .navbar-default .navbar-brand:hover,
+    .header .navbar-default .navbar-brand:focus {
+        color: #fff;
+    }
+
+    .header .headerrightbox > li > a.nav-button:focus,
+    .header .headerrightbox > li > a.nav-button:hover {
+        border: 0;
+        color: #fff;
+        background-color: #01BF86;
+    }
+
+    .header .headerrightbox > li > a.nav-button {
+        background-color: #01BF86;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        padding: 8px 18px;
+        font-weight: bold;
+        border-radius: 3px;
+        line-height: 15px;
+        border-top: 0;
+    }
+/* end navbar */
+
+/* header */
+.header {
+    /*cover;*/
+    font-family: 'Titillium Web', sans-serif;
+}
+
+    .header .intro {
+        min-height: 100vh;
+    }
+
+    .header h1 {
+        color: #fff;
+        font-size: 55px;
+        font-weight: 700;
+        letter-spacing: -1px;
+        line-height: 1.2;
+        margin-bottom: 30px;
+        max-width: 700px;
+        position: relative;
+        text-transform: capitalize;
+        font-family: 'Roboto Slab', serif;
+    }
+
+    .header .pull-stop::after {
+        border: 6px solid #01bf86;
+        bottom: 15px;
+        width: 8px;
+    }
+
+    .header p {
+        color: #f8f8f8;
+        font-size: 15px;
+        line-height: 1.6;
+        font-weight: 300;
+        margin-bottom: 25px;
+        max-width: 700px;
+    }
+
+    .header .button {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 16px;
+        padding: 11px 0;
+        min-width: 150px;
+        border: 0;
+        box-shadow: none;
+        border-radius: 4px;
+        margin: 0 2px;
+        /*background-color:*/
+    }
+
+    .header .btn-success.button {
+        background-color: #01BF86;
+    }
+
+    .header .btn-info.button {
+        background-color: #38A5E0;
+    }
+
+    .header .button:hover {
+        background-color: #38A5E0;
+    }
+
+
+
+
+
+/*------------------footer----------------------------------*/
+.footer {
+    background-color: #191919;
+    padding: 50px 0;
+}
+
+    .footer .footer-box {
+        box-shadow: none;
+        border-radius: 0;
+        background-color: transparent;
+        border-color: #fcfcfc;
+        /*min-height: 185px;*/
+    }
+
+        .footer .footer-box .schedule.list-unstyled li {
+            color: #999;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .footer .footer-box strong i {
+            float: left;
+            color: #fff;
+            font-size: 30px;
+            line-height: 20px;
+            margin-right: 10px;
+        }
+
+        .footer .footer-box strong {
+            color: #fff;
+            display: block;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .footer .footer-box p {
+            font-size: 13px;
+            margin-bottom: 0;
+            color: #999;
+        }
+
+    .footer .contact-box p {
+        margin-bottom: 5px;
+    }
+
+    .footer .service-box li {
+        color: #999;
+        font-size: 13px;
+        position: relative;
+        padding-left: 25px;
+    }
+
+        .footer .service-box li:before {
+            content: '';
+            background-color: #999;
+            position: absolute;
+            display: block;
+            width: 10px;
+            height: 1px;
+            top: 10px;
+            left: 0;
+        }
+
+
+
+    /* footer */
+    .footer.f-bottom {
+        padding: 0;
+        background-color: #101010;
+    }
+
+        .footer.f-bottom p {
+            color: #aaa;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            margin-bottom: 22px;
+            margin-top: 22px;
+            text-align: center;
+            text-transform: uppercase;
+            word-spacing: 1px;
+            font-family: 'Titillium Web', sans-serif;
+        }
+
+            .footer.f-bottom p a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+
+
+
+.pl-headersitelogo {
+    height: 25px;
+    margin-bottom: 5px;
+}
+
+.pl-siteheading {
+    color: white;
+    font-size: 20px;
+    font-weight: bold
+}
+
+
+.pl-homebanner {
+    background: url('https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80') no-repeat center fixed
+}
+
+.pl-homepagesectitle {
+    font-family: Calibri;
+    font-weight: normal
+}
+
+ul.pl-topNavigation li {
+    display: inline;
+    padding: 10px;
+    /*border: 1px solid darkgray;*/
+    margin: 10px;
+    color: black;
+}
+
+ul.pl-topNavigation {
+    text-align: center;
+}
+
+    ul.pl-topNavigation a {
+        color: black;
+    }
+
+
+.pl-contentcontainer {
+    min-height: -webkit-fill-available;
+}
+
+
+
+.pl-topNavigation li {
+    display: inline
+}
+
+ul.pl-topNavigation {
+    display: flex;
+    align-items: stretch; /* Default */
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 15px !important;
+    font-family: verdana;
+    font-size: 14px;
+    text-transform: uppercase;
+    background: rgb(243,253,259) !important;
+}
+
+.pl-topNavigation li {
+    display: inline;
+    flex: 0 1 auto; /* Default */
+    list-style-type: none;
+}
+
+
+
+/*For Modal loading screen*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba( 255, 255, 255, .8 ) url('http://i.stack.imgur.com/FhHRx.gif') 50% 50% no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading .modal {
+    overflow: hidden;
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
+}
+
+.hoverDropdown {
+    /*background-color: #01BF86;*/
+    color: white;
+    padding: 5px;
+    font-size: 10px;
+    border: none;
+    border-radius: 3px;
+}
+
+.hoverDropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.hoverDropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 182px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .hoverDropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        .hoverDropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+.hoverDropdown:hover .hoverDropdown-content {
+    display: block;
+}
+
+.hoverDropdown:hover .hoverDropdownbtn {
+    background-color: #3e8e41;
+}
+
+.hoverDropdownbtn {
+    background: #01BF86;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+
+.pl-searchbox {
+    width: 70%;
+}
+
+
+.pl-sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+
+    .pl-sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 14px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+        .pl-sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+    .pl-sidenav .closebtn {
+        position: absolute;
+        top: 6%;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+
+    .header .navbar {
+        height: 80px;
+    }
+}
+
+a {
+    color: darkorange;
+}

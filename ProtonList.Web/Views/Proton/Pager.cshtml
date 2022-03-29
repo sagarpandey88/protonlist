@@ -1,0 +1,36 @@
+﻿
+
+<nav aria-label="Page navigation example">
+
+    @if (Model.ProtonList.Pager.EndPage > 1)
+    {
+        <ul class="pagination">
+            @if (Model.ProtonList.Pager.CurrentPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="~/Proton/SearchProton?keyword=@(Model.Keyword)">First</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="~/Proton/SearchProton?keyword=@(Model.Keyword)&page=@(Model.ProtonList.Pager.CurrentPage - 1)">Previous</a>
+                </li>
+            }
+
+            @for (var page = Model.ProtonList.Pager.StartPage; page <= Model.ProtonList.Pager.EndPage; page++)
+            {
+                <li class="@(page == Model.ProtonList.Pager.CurrentPage ? "active" : "") page-item">
+                    <a class="page-link" href="~/Proton/SearchProton?keyword=@(Model.Keyword)&page=@page">@page</a>
+                </li>
+            }
+
+            @if (Model.ProtonList.Pager.CurrentPage < Model.ProtonList.Pager.TotalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="~/Proton/SearchProton?keyword=@(Model.Keyword)&page=@(Model.ProtonList.Pager.CurrentPage + 1)">Next</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="~/Proton/SearchProton?keyword=@(Model.Keyword)&page=@(Model.ProtonList.Pager.TotalPages)">Last</a>
+                </li>
+            }
+        </ul>
+    }
+</nav>

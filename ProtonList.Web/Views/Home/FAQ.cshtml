@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "FAQ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>FAQ</h2>
+
+<div class="accordion" id="accordionExample">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Why Us? (Visitors)
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+                We are a commuity based unbiased site which doesnt favor any of the list. The site intends to facilitate a one place stop for top items, versus and other list ideas.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Why Us ? (Content Writers)
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                You can us our site to create your list and to affiliate marketing. Instead of keep the set of affliates list in some storage media like google drive , notepad etc store it in our site.
+                Share the link to the list which is rather more convinient , easy and more appealing.
+                Also , we are in constant endeavor to make it more simple and easy to create list.
+                Not only list creation there will be many display templates to choose from as well as we know not every content suits a single template.
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Feedback , Sugesstion, Report Abuse , inappropriate content.
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                Feedback suggestions are welcome. A form will be coming soon. Till then you can mail us on below email id
+                We are currently in progress of making an AI model to parse through the contents of list but incase you need to report any inappropriate content.We will review and would put it down.
+                <a href="mailto:support@protonmail.com">support@protonlist.com</a>
+            </div>
+        </div>
+    </div>
+</div>

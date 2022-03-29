@@ -1,0 +1,197 @@
+﻿
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+@{
+
+    ViewBag.Title = "Create";
+}
+
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link href="~/Content/bootstrap-tagsinput.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap-tagsinput.js"></script>
+<script src="~/Scripts/plScript.js"></script>
+<script src="~/Scripts/plDragUpload.js"></script>
+<link href="~/Content/plcrud.css" rel="stylesheet" />
+
+
+@using (Html.BeginForm("Submit", "Proton", FormMethod.Post, new { id = "plProtonForm" }))
+{
+    @Html.AntiForgeryToken()
+    <input id="pl-imgUpload" type="file" style="display:none">
+    <div class="row">
+        <div class="col-md-12" style="text-align :center;"><h4 style="color:#01BF86">New List</h4><hr /></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12"><h6 style="color:#01BF86">List Header : </h6></div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div>
+                <!--Category Dropdown-->
+                @Html.DropDownList("selCategory", ViewBag.Categories as List<SelectListItem>)
+
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            Tags:<!--Tags Control--><input type="text" value="" id="txtTags" data-role="tagsinput" name="tags" />
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-12">
+            <input type="text" id="txtListTitle" required class="pl-input form-control" name="ListTitle" placeholder="Enter List Title" style="font-size:14px;">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <input type="text" id="txtFeaturedImageUrl" required class="pl-input form-control" name="FeaturedImageUrl" placeholder="Enter Image Url" style="font-size:14px;">
+            <hr />
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12"><h6 style="color:#01BF86">List Items : </h6></div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-12">
+            <ul class="list-unstyled pl-mainlist ui-sortable">
+                <li class="pl-ListItemRow">
+                    <div class="table">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input id="txtItemTitle" required type="text" class="pl-ItemTitleInput pl-ItemTitle" name="ItemTitle" placeholder="Enter Item Title">
+
+
+                            </div>
+                            <div class="col-md-6">
+                                <input id="txtItemLink" type="text" class="pl-ItemLink pl-ItemLink " name="ItemLink" placeholder="Enter Item Link">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <textarea id="dvItemDescription" placeholder="Item Description" name="ItemDescription" class="pl-ItemDescription  pl-borderRadius"></textarea>
+                            </div>
+                            <div class="col-md-3">
+                                <div style="display: table; height: 96%; border: 1px solid #d3d3d3;width:100%;text-align:center">
+                                    <div style="display: table-cell; vertical-align: middle;">
+                                        <i class="fas fa-minus-circle pl-removeImage" title="Click to remove image"></i>
+                                        <div id="dvImagePreview" class="pl-ImagePreview">
+                                            Image Preview
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="text-align:right">
+                                <div id="dvImageContainer" class="pl-ImageContainer">
+                                    <img src="~/Images/addImage.png" alt="Click here to add image" title="Click here to add image" />
+                                </div>
+                                <div class="pl-handlecell" style="display:inline;padding-left:10px;">
+                                    <img src="~/Images/move-arrows.svg" class="handle ui-sortable-handle" title="Click here to drag item">
+                                    <span class="glyphicon glyphicon-move handle ui-sortable-handle"></span>
+                                </div>
+                                <div class="pl-deleteitem" style="display:inline">
+                                    <img src="~/Images/delete.png" alt="Click here to delete item" title="Click here to delete item" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div id="dvAddLink" class="pl-row">
+                <div class="pl-cell">
+                    <a href="javascript:PL.AddNewRow();"><img src="~/Images/add.png" /></a>
+                </div>
+            </div>
+            <div style="text-align:right">
+                <input type="button" name="submit" onclick="PushData()" value="Submit" style="    background: #01BF86;    color: white;    padding: 7px 15px;    border-style: solid;    border: 0px;">
+            </div>
+            <div>
+                <div id="dvImageUrlWrapper">
+                    <div id="dvImageUrl" class="pl-ImageInputWrapper">
+                        Image Url :  <input id="txtImageUrl"> <input type="button" value="Submit" id="btnSubmit">
+                        <img class="pl-ImageUrlClose" src="~/Images/close.png" onclick="$('#dvImageUrlWrapper').hide();" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+}
+
+
+
+<script>
+
+
+    $(".pl-ImagePreview").DragUpload();
+
+
+    var validator;
+
+    function PushData() {
+
+        //if ($(".pl-contentcontainer form").valid()) {
+        if (PL.ValidateForm()) {
+            PL.ShowModal();
+
+
+
+            var info = PL.GetListInfo();
+            var url = "CreateList";
+
+            var antiForgeryToken = $("input[name=__RequestVerificationToken]").val();
+
+
+            jQuery.postJSON(url, info, SuccessHandler, ErrorHandler, antiForgeryToken, "text");
+        }
+        else {
+
+
+            PL.Notify("There are few errors please check.", PL.NotificationType.Warning);
+            return false;
+        }
+
+
+    }
+
+
+    function SuccessHandler(data) {
+        console.log(data);
+        console.log("Success");
+        PL.HideModal();
+        $.notify({
+            // options
+            message: 'Update Successful'
+        }, {
+                // settings
+                type: 'success',
+                animate: {
+                    enter: 'animated bounceInDown',
+                    exit: 'animated bounceOutUp'
+                }
+            });
+        window.location.href = data;
+
+    }
+
+
+    function ErrorHandler(args, e) {
+        PL.HideModal();
+        console.log("Error");
+        alert("Error");
+        console.log(args.responseText);
+        console.log(e);
+
+    }
+
+</script>
+

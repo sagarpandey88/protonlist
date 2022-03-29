@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proton List: @ViewBag.Title</title>
+    <meta name="description" content="Proton List is an online community driven lists site. Here you can create your own list and share it with the world. You will often find best lists only on Proton lists ">
+    <meta name="keywords" content="@ViewBag.MetaKeywords">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+
+    <link rel="stylesheet" href="~/Content/plMaster.css" />
+    <script type="text/javascript" src="~/Scripts/plMaster.js"></script>
+</head>
+<body>
+
+    <div id="fb-root"></div>
+    <script type="text/javascript">
+
+        $(document).ready(function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    @{ Html.RenderPartial("~/Views/Master/Header.cshtml");}
+
+    <div class="container body-content pl-contentcontainer m-0 m-md-auto">
+        @RenderBody()
+        <hr />
+
+    </div>
+    @{ Html.RenderPartial("~/Views/Master/Footer.cshtml");}
+
+</body>
+</html>

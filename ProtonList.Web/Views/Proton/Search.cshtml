@@ -1,0 +1,31 @@
+﻿@model ProtonList.Web.Models.SearchPageModel
+@{
+    /**/
+
+    ViewBag.Title = "Search a list";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search</h2>
+
+@*
+    Can use featured view with a model with advanced searching option
+*@
+
+<link rel="stylesheet" href="~/Content/plHome.css" />
+
+Keyword : @Model.Keyword
+<section id="pl-homepagesections" class="pl-homepagesections">
+    <div class="container">
+
+        <div class="row">
+            @Html.Partial(ProtonList.Web.Common.WebConstants.ViewUrl.ProtonListView, Model.ProtonList)
+
+        </div>
+        <div class="row">
+            @Html.Partial("~/Views/Proton/Pager.cshtml", Model)
+
+        </div>
+    </div>
+
+</section>

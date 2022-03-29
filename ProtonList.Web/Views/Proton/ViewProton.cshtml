@@ -1,0 +1,120 @@
+﻿@model  ProtonList.Web.Models.ProtonModel
+@{
+    ViewBag.Title = Model.ListInfo.ListTitle.Length < 75 ? Model.ListInfo.ListTitle : Model.ListInfo.ListTitle.Substring(0, 75);
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.MetaKeywords = Model.ListInfo.Tags;
+}
+<link href="~/Content/plcrud.css" rel="stylesheet" />
+
+<script type="application/ld+json">
+    {
+    "@@context" : "http://schema.org",
+    "@@type" : "Article",
+    "name" : "@Model.ListInfo.ListTitle",
+    "datePublished" : "@Model.ListInfo.ModifiedDate.ToShortDateString()",
+    "image" : "@Model.OtherListInfo.FeaturedImageUrl",
+    "aggregateRating" : {
+    "@@type" : "AggregateRating",
+    "ratingCount" : "@Model.ListInfo.Views"
+    }
+    }
+</script>
+
+
+<div class="container pl-viewcontainer p-0">
+    <div class="row">
+        <div class="col">
+            <h3 id="hListTitle"> @Model.ListInfo.ListTitle</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <img src="@Model.OtherListInfo.FeaturedImageUrl" class="pl-FeaturedImage" />
+        </div>
+    </div>
+    <div class="row text-center" style="font-size:12px;color:gray">
+        <div class="col">
+            Views : @Model.ListInfo.Views
+        </div>
+        <div class="col">
+            Last Updated :  @Model.ListInfo.ModifiedDate.ToShortDateString()
+        </div>
+        <div class="col">
+            <a href="whatsapp://send?text= @Request.Url.OriginalString"> <i class="fab fa-whatsapp"></i></a>
+            <a href="javascript:PLCopyToClipboard()">	<i class="far fa-copy"></i> </a>
+            <input type="text" style="display:none" id="inpCopyClipboard" value="@Request.Url.OriginalString" />
+            <script type="text/javascript">
+                function PLCopyToClipboard() {
+
+                    var copyText = $("#inpCopyClipboard"); copyText.show();
+                    copyText.select();
+                    document.execCommand("copy");
+                    copyText.hide();
+                    alert("Link copied");
+                }
+            </script>
+        </div>
+    </div>
+
+    <div class="row">
+        <ul class="pl-viewlist p-0">
+
+            @foreach (var item in Model.ListItemDetails)
+            {
+                <li>
+                    <div class="row pl-Item">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-12 text-center">
+                                    <img src="@item.ItemImageUrl" class="pl-ItemImageThumb" />
+
+                                </div>
+                                <div class="col-md-9 col-sm-12 p-0">
+                                    <div class="col-12 pl-viewItemTitle text-center text-md-left">
+                                        <a href="@item.LinkUrl"><h5>@item.ItemTitle</h5></a>
+                                    </div>
+                                    <div class="col-12 pl-viewItemDescription">
+                                        @item.ItemDescription
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </li>
+            }
+        </ul>
+
+    </div>
+    <div class="row">
+
+        <div class="col">
+            Tags:
+            <ul class="pl-viewtags">
+
+                @{
+                    if (!string.IsNullOrEmpty(Model.ListInfo.Tags))
+                    {
+                        foreach (var tag in Model.ListInfo.Tags.Split(','))
+                        {
+                            <li><a href="#">@tag</a></li>
+                        }
+                    }
+
+                }
+            </ul>
+        </div>
+
+    </div>
+
+
+    <div class="fb-comments" data-href="@Request.Url.ToString()" data-numposts="5"></div>
+
+
+</div>
+
